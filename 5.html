@@ -1,0 +1,1118 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora el universo, la Vía Láctea, los planetas, las galaxias y los misterios del espacio exterior.">
+    <title>Universo Infinito | Explorando el espacio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --azul: #48dfff;
+            --violeta: #bd83ff;
+            --rosa: #ff6bd6;
+            --blanco: #f4f6ff;
+            --panel: rgba(8, 13, 38, 0.88);
+            --borde: rgba(72, 223, 255, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--blanco);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 19px;
+            line-height: 1.65;
+            background:
+                linear-gradient(rgba(3, 5, 23, 0.80), rgba(3, 5, 23, 0.94)),
+                url("https://www.universostartrek.com/La-Via-Lactea.jpg")
+                center center / cover fixed;
+            background-color: #030517;
+        }
+
+        a {
+            color: var(--azul);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--rosa);
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        header {
+            min-height: 420px;
+            padding: 55px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background:
+                radial-gradient(ellipse at center, rgba(80, 32, 160, 0.25), transparent 70%);
+            border-bottom: 1px solid var(--borde);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "✦     ·       ✧        ·    ✦      ·       ✧";
+            position: absolute;
+            inset: 20px 0 auto;
+            color: var(--azul);
+            opacity: 0.5;
+            letter-spacing: 20px;
+            animation: brillar 4s infinite alternate;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--azul);
+            box-shadow: 0 0 25px var(--azul), 0 0 60px rgba(189, 131, 255, 0.6);
+            margin-bottom: 22px;
+            animation: flotar 5s ease-in-out infinite;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            color: white;
+            margin: 0;
+            text-shadow: 0 0 12px var(--azul), 0 0 35px var(--violeta);
+            letter-spacing: 4px;
+        }
+
+        .subtitulo {
+            max-width: 750px;
+            color: #e2e9ff;
+            font-size: 1.3rem;
+        }
+
+        .etiqueta {
+            color: var(--azul);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 12px;
+            background: rgba(3, 5, 23, 0.97);
+            border-bottom: 1px solid var(--borde);
+            backdrop-filter: blur(12px);
+        }
+
+        nav a {
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(72, 223, 255, 0.13);
+            box-shadow: 0 0 15px rgba(72, 223, 255, 0.25);
+            text-decoration: none;
+        }
+
+        main {
+            width: min(1150px, 92%);
+            margin: auto;
+        }
+
+        section {
+            padding: 70px 0;
+            scroll-margin-top: 90px;
+        }
+
+        .titulo-seccion {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--azul);
+            text-align: center;
+            margin-bottom: 12px;
+            text-shadow: 0 0 18px rgba(72, 223, 255, 0.35);
+        }
+
+        .introduccion {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-align: center;
+            color: #e0e6ff;
+        }
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--borde);
+            border-radius: 18px;
+            padding: 26px;
+            box-shadow: 0 0 25px rgba(45, 110, 255, 0.08);
+        }
+
+        .panel:hover {
+            border-color: var(--violeta);
+            box-shadow: 0 0 25px rgba(189, 131, 255, 0.15);
+        }
+
+        .rejilla {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .tarjeta {
+            padding: 24px;
+            background: linear-gradient(145deg, rgba(17, 25, 65, 0.94), rgba(17, 9, 42, 0.95));
+            border: 1px solid var(--borde);
+            border-radius: 16px;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-7px);
+            border-color: var(--rosa);
+            box-shadow: 0 8px 30px rgba(189, 131, 255, 0.17);
+        }
+
+        .icono {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        h2, h3 {
+            color: var(--violeta);
+        }
+
+        .tarjeta h3 {
+            margin-top: 0;
+            font-size: 1.05rem;
+        }
+
+        .dato {
+            color: var(--azul);
+            font-weight: bold;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 8px 5px 0 0;
+            border: 1px solid var(--azul);
+            border-radius: 8px;
+            color: white;
+            background: rgba(72, 223, 255, 0.08);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background: var(--azul);
+            color: #030517;
+            box-shadow: 0 0 22px rgba(72, 223, 255, 0.45);
+            text-decoration: none;
+        }
+
+        .franja {
+            margin: 25px 0;
+            padding: 24px;
+            border-left: 4px solid var(--rosa);
+            border-radius: 0 12px 12px 0;
+            background: rgba(255, 107, 214, 0.08);
+        }
+
+        .planeta {
+            text-align: center;
+        }
+
+        .planeta .icono {
+            font-size: 3.5rem;
+            filter: drop-shadow(0 0 10px rgba(72, 223, 255, 0.4));
+        }
+
+        .tabla-contenedor {
+            overflow-x: auto;
+            border-radius: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(7, 12, 35, 0.95);
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border: 1px solid rgba(72, 223, 255, 0.2);
+        }
+
+        th {
+            background: rgba(72, 223, 255, 0.15);
+            color: var(--azul);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+        }
+
+        tr:hover td {
+            background: rgba(189, 131, 255, 0.08);
+        }
+
+        details {
+            background: rgba(13, 20, 55, 0.92);
+            border: 1px solid var(--borde);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 12px 0;
+        }
+
+        summary {
+            cursor: pointer;
+            color: var(--azul);
+            font-weight: bold;
+        }
+
+        details p {
+            margin-bottom: 0;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .imagen-galeria {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--borde);
+            transition: 0.3s;
+        }
+
+        .imagen-galeria:hover {
+            transform: scale(1.025);
+            box-shadow: 0 0 20px rgba(72, 223, 255, 0.25);
+        }
+
+        .recurso {
+            display: block;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid rgba(72, 223, 255, 0.23);
+            background: rgba(15, 24, 58, 0.8);
+        }
+
+        .recurso strong {
+            color: var(--azul);
+        }
+
+        .cita {
+            color: #d9dff8;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 45px 20px;
+            background: rgba(2, 4, 17, 0.97);
+            border-top: 1px solid var(--borde);
+        }
+
+        footer p {
+            margin: 7px;
+        }
+
+        .volver {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background: #101936;
+            border: 1px solid var(--azul);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            font-size: 1.5rem;
+            box-shadow: 0 0 15px rgba(72, 223, 255, 0.25);
+        }
+
+        .nota {
+            font-size: 0.95rem;
+            color: #cbd4f7;
+        }
+
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes brillar {
+            from { opacity: 0.25; }
+            to { opacity: 0.9; }
+        }
+
+        @media (max-width: 650px) {
+            body { font-size: 17px; background-attachment: scroll; }
+            nav { position: relative; }
+            nav a { font-size: 0.68rem; padding: 7px; }
+            header { min-height: 350px; }
+            .logo { width: 115px; height: 115px; }
+            section { padding: 48px 0; }
+            .panel { padding: 19px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body id="inicio">
+
+<header>
+    <img class="logo"
+         src="https://www.universostartrek.com/La-Via-Lactea.jpg"
+         alt="La Vía Láctea en el espacio"
+         onerror="this.style.display='none'">
+
+    <p class="etiqueta">Una aventura más allá de las estrellas</p>
+    <h1>EL ESPACIO EXTERIOR</h1>
+
+    <p class="subtitulo">
+        Descubre galaxias lejanas, mundos desconocidos, fenómenos increíbles
+        y los secretos que esconde el universo.
+    </p>
+
+    <p>✦ Creado por Nicolás Castillo ✦</p>
+    <a class="boton" href="#universo">COMENZAR EXPLORACIÓN ↓</a>
+</header>
+
+<nav aria-label="Menú principal">
+    <a href="#inicio">Inicio</a>
+    <a href="#universo">Universo</a>
+    <a href="#galaxia">Vía Láctea</a>
+    <a href="#planetas">Planetas</a>
+    <a href="#fenomenos">Fenómenos</a>
+    <a href="#misiones">Misiones</a>
+    <a href="#viaje">Viaje virtual</a>
+    <a href="#galeria">Galería</a>
+    <a href="#recursos">Enlaces</a>
+    <a href="#test">Test</a>
+    <a href="#sobre-mi">Autor</a>
+</nav>
+
+<main>
+
+    <!-- INTRODUCCIÓN -->
+
+    <section id="universo">
+        <h2 class="titulo-seccion">01 · ¿QUÉ ES EL UNIVERSO?</h2>
+
+        <p class="introduccion">
+            El universo es todo lo que existe: el espacio, el tiempo, la materia,
+            la energía, las estrellas, los planetas y las galaxias.
+            Es tan inmenso que todavía no conocemos todos sus secretos.
+        </p>
+
+        <div class="panel">
+            <p>
+                Según el modelo cosmológico actual, el universo comenzó a expandirse
+                hace aproximadamente <span class="dato">13.800 millones de años</span>
+                en un proceso conocido como <strong>Big Bang</strong>. No fue una
+                explosión corriente dentro de un espacio vacío: fue la expansión
+                del propio espacio desde un estado extremadamente caliente y denso.
+            </p>
+
+            <p>
+                Con el paso del tiempo se formaron partículas, átomos, estrellas,
+                galaxias y sistemas planetarios. Hoy el universo continúa expandiéndose.
+                Los científicos estudian su evolución mediante telescopios, satélites,
+                sondas espaciales y modelos matemáticos.
+            </p>
+
+            <a class="boton" href="https://science.nasa.gov/universe/" target="_blank" rel="noopener noreferrer">
+                Explorar el universo en NASA
+            </a>
+            <a class="boton" href="https://science.nasa.gov/mission/webb/" target="_blank" rel="noopener noreferrer">
+                Telescopio James Webb
+            </a>
+        </div>
+
+        <div class="rejilla" style="margin-top:22px">
+            <article class="tarjeta">
+                <span class="icono">🌌</span>
+                <h3>Galaxias</h3>
+                <p>Grandes agrupaciones de estrellas, gas, polvo y materia oscura unidas por la gravedad.</p>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">⭐</span>
+                <h3>Estrellas</h3>
+                <p>Esferas de plasma que producen energía en su interior. El Sol es la estrella más cercana a nosotros.</p>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🪐</span>
+                <h3>Planetas</h3>
+                <p>Mundos que orbitan estrellas. Pueden ser rocosos, gigantes gaseosos o ricos en hielos.</p>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🔭</span>
+                <h3>Exploración</h3>
+                <p>La astronomía utiliza la luz y otras señales para investigar objetos que están a enormes distancias.</p>
+            </article>
+        </div>
+
+        <div class="franja">
+            <strong>¿Sabías que...?</strong>
+            La luz necesita tiempo para viajar. Cuando observamos una galaxia lejana,
+            vemos la luz que salió de ella hace muchísimo tiempo. Por eso, mirar al
+            espacio también significa mirar al pasado.
+        </div>
+    </section>
+
+    <!-- VÍA LÁCTEA -->
+
+    <section id="galaxia">
+        <h2 class="titulo-seccion">02 · NUESTRA GALAXIA: LA VÍA LÁCTEA</h2>
+
+        <p class="introduccion">
+            Nuestro hogar cósmico es una galaxia espiral barrada formada por
+            una enorme cantidad de estrellas, sistemas planetarios, nubes de gas y polvo.
+        </p>
+
+        <div class="panel">
+            <p>
+                La Vía Láctea tiene una estructura con un centro brillante, una barra
+                central y brazos espirales. Nuestro sistema solar se encuentra en una
+                región llamada <strong>brazo de Orión o espolón de Orión</strong>,
+                lejos del centro galáctico.
+            </p>
+
+            <p>
+                El Sol orbita alrededor del centro de la galaxia. Una vuelta completa
+                tarda aproximadamente <span class="dato">230 millones de años</span>.
+                La galaxia es tan grande que incluso la luz necesita decenas de miles
+                de años para atravesar buena parte de su disco.
+            </p>
+
+            <p>
+                Desde la Tierra, en lugares oscuros y alejados de la contaminación
+                lumínica, la Vía Láctea puede verse como una franja blanquecina en el cielo.
+            </p>
+
+            <a class="boton" href="https://science.nasa.gov/universe/galaxies/" target="_blank" rel="noopener noreferrer">
+                Más sobre las galaxias
+            </a>
+            <a class="boton" href="https://science.nasa.gov/skywatching/" target="_blank" rel="noopener noreferrer">
+                Observar el cielo
+            </a>
+        </div>
+
+        <div class="rejilla" style="margin-top:22px">
+            <article class="tarjeta">
+                <span class="icono">☀️</span>
+                <h3>El Sol</h3>
+                <p>Es una estrella situada en uno de los brazos de nuestra galaxia. Su gravedad mantiene a los planetas en órbita.</p>
+                <a href="https://science.nasa.gov/sun/" target="_blank" rel="noopener noreferrer">Conocer el Sol ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🌠</span>
+                <h3>Nebulosas</h3>
+                <p>Son nubes de gas y polvo donde pueden nacer estrellas o quedar restos de estrellas que han evolucionado.</p>
+                <a href="https://science.nasa.gov/universe/stars/" target="_blank" rel="noopener noreferrer">Descubrir las estrellas ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🕳️</span>
+                <h3>Centro galáctico</h3>
+                <p>En el centro de la Vía Láctea se encuentra Sagitario A*, un agujero negro supermasivo.</p>
+                <a href="https://science.nasa.gov/universe/black-holes/" target="_blank" rel="noopener noreferrer">Aprender sobre agujeros negros ↗</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- SISTEMA SOLAR -->
+
+    <section id="planetas">
+        <h2 class="titulo-seccion">03 · EL SISTEMA SOLAR</h2>
+
+        <p class="introduccion">
+            El sistema solar está formado por el Sol y todos los objetos que permanecen
+            ligados a él por la gravedad: ocho planetas, planetas enanos, lunas,
+            asteroides y cometas.
+        </p>
+
+        <div class="franja">
+            <strong>Orden de los planetas:</strong>
+            Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano y Neptuno.
+            Plutón se clasifica como planeta enano desde 2006.
+        </div>
+
+        <div class="rejilla">
+            <article class="tarjeta planeta">
+                <span class="icono">🌑</span>
+                <h3>Mercurio</h3>
+                <p>Es el planeta más cercano al Sol y el más pequeño de los ocho planetas. Tiene una superficie rocosa y llena de cráteres.</p>
+                <a href="https://science.nasa.gov/mercury/" target="_blank" rel="noopener noreferrer">Explorar Mercurio ↗</a>
+            </article>
+
+            <article class="tarjeta planeta">
+                <span class="icono">🟡</span>
+                <h3>Venus</h3>
+                <p>Posee una atmósfera muy densa, rica en dióxido de carbono. Su intenso efecto invernadero lo convierte en el planeta más caliente.</p>
+                <a href="https://science.nasa.gov/venus/" target="_blank" rel="noopener noreferrer">Explorar Venus ↗</a>
+            </article>
+
+            <article class="tarjeta planeta">
+                <span class="icono">🌍</span>
+                <h3>Tierra</h3>
+                <p>Nuestro hogar. Tiene agua líquida abundante en la superficie y es el único mundo donde se ha confirmado vida.</p>
+                <a href="https://science.nasa.gov/earth/" target="_blank" rel="noopener noreferrer">Explorar la Tierra ↗</a>
+            </article>
+
+            <article class="tarjeta planeta">
+                <span class="icono">🔴</span>
+                <h3>Marte</h3>
+                <p>El planeta rojo tiene volcanes gigantes, antiguos cauces y casquetes polares. Los robots investigan si pudo albergar vida microbiana.</p>
+                <a href="https://science.nasa.gov/mars/" target="_blank" rel="noopener noreferrer">Explorar Marte ↗</a>
+            </article>
+
+            <article class="tarjeta planeta">
+                <span class="icono">🟠</span>
+                <h3>Júpiter</h3>
+                <p>Es el planeta más grande del sistema solar. Tiene numerosas lunas y una enorme tormenta conocida como la Gran Mancha Roja.</p>
+                <a href="https://science.nasa.gov/jupiter/" target="_blank" rel="noopener noreferrer">Explorar Júpiter ↗</a>
+            </article>
+
+            <article class="tarjeta planeta">
+                <span class="icono">🪐</span>
+                <h3>Saturno</h3>
+                <p>Es famoso por su espectacular sistema de anillos, compuesto principalmente por fragmentos de hielo y roca.</p>
+                <a href="https://science.nasa.gov/saturn/" target="_blank" rel="noopener noreferrer">Explorar Saturno ↗</a>
+            </article>
+
+            <article class="tarjeta planeta">
+                <span class="icono">🔵</span>
+                <h3>Urano</h3>
+                <p>Es un gigante helado que gira con una inclinación extrema, como si rodara alrededor del Sol.</p>
+                <a href="https://science.nasa.gov/uranus/" target="_blank" rel="noopener noreferrer">Explorar Urano ↗</a>
+            </article>
+
+            <article class="tarjeta planeta">
+                <span class="icono">🔷</span>
+                <h3>Neptuno</h3>
+                <p>Es el planeta más lejano del Sol. Es un gigante helado con una atmósfera muy dinámica y vientos intensos.</p>
+                <a href="https://science.nasa.gov/neptune/" target="_blank" rel="noopener noreferrer">Explorar Neptuno ↗</a>
+            </article>
+        </div>
+
+        <h3 style="margin-top:35px">Comparación rápida</h3>
+
+        <div class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Planeta</th>
+                        <th>Tipo</th>
+                        <th>Característica destacada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Mercurio</td><td>Rocoso</td><td>El más cercano al Sol</td></tr>
+                    <tr><td>Venus</td><td>Rocoso</td><td>El más caliente</td></tr>
+                    <tr><td>Tierra</td><td>Rocoso</td><td>Agua líquida y vida conocida</td></tr>
+                    <tr><td>Marte</td><td>Rocoso</td><td>Superficie rojiza</td></tr>
+                    <tr><td>Júpiter</td><td>Gigante gaseoso</td><td>El planeta más grande</td></tr>
+                    <tr><td>Saturno</td><td>Gigante gaseoso</td><td>Sus grandes anillos</td></tr>
+                    <tr><td>Urano</td><td>Gigante helado</td><td>Rotación muy inclinada</td></tr>
+                    <tr><td>Neptuno</td><td>Gigante helado</td><td>Vientos muy intensos</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="nota">Consulta la información ampliada en la web oficial de la
+            <a href="https://science.nasa.gov/solar-system/" target="_blank" rel="noopener noreferrer">NASA: Sistema Solar</a>.
+        </p>
+    </section>
+
+    <!-- FENÓMENOS -->
+
+    <section id="fenomenos">
+        <h2 class="titulo-seccion">04 · LOS GRANDES MISTERIOS DEL ESPACIO</h2>
+
+        <p class="introduccion">
+            El universo contiene fenómenos extremos que desafían nuestra intuición.
+            Algunos podemos observarlos; otros se investigan mediante instrumentos especiales.
+        </p>
+
+        <div class="rejilla">
+            <article class="tarjeta">
+                <span class="icono">🕳️</span>
+                <h3>Agujeros negros</h3>
+                <p>Son regiones donde la gravedad es tan intensa que, más allá de su horizonte de sucesos, ni siquiera la luz puede escapar.</p>
+                <p>Muchos se forman a partir de estrellas masivas. Otros, mucho mayores, se encuentran en los centros de galaxias.</p>
+                <a href="https://science.nasa.gov/universe/black-holes/" target="_blank" rel="noopener noreferrer">Investigar agujeros negros ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">💥</span>
+                <h3>Supernovas</h3>
+                <p>Son explosiones estelares extraordinariamente energéticas. Pueden dispersar elementos que después formarán parte de nuevas estrellas y planetas.</p>
+                <a href="https://science.nasa.gov/universe/stars/" target="_blank" rel="noopener noreferrer">Descubrir la vida de las estrellas ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🌌</span>
+                <h3>Materia oscura</h3>
+                <p>No emite ni refleja luz de forma detectable como la materia común. Inferimos su presencia por sus efectos gravitatorios.</p>
+                <a href="https://science.nasa.gov/universe/" target="_blank" rel="noopener noreferrer">Explorar el universo ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">✨</span>
+                <h3>Energía oscura</h3>
+                <p>Es el nombre que damos al fenómeno relacionado con la expansión acelerada del universo. Su naturaleza sigue siendo desconocida.</p>
+                <a href="https://science.nasa.gov/universe/" target="_blank" rel="noopener noreferrer">Leer más en NASA ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">☄️</span>
+                <h3>Cometas y asteroides</h3>
+                <p>Los asteroides son cuerpos rocosos y los cometas contienen hielo, polvo y materiales congelados. Ambos ayudan a conocer los orígenes del sistema solar.</p>
+                <a href="https://science.nasa.gov/solar-system/asteroids/" target="_blank" rel="noopener noreferrer">Explorar asteroides ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🌈</span>
+                <h3>Auroras</h3>
+                <p>Se producen cuando partículas energéticas interactúan con la atmósfera y el campo magnético de un planeta. En la Tierra suelen verse cerca de los polos.</p>
+                <a href="https://science.nasa.gov/sun/" target="_blank" rel="noopener noreferrer">Conocer la actividad solar ↗</a>
+            </article>
+        </div>
+
+        <div class="franja">
+            <strong>Una pregunta fascinante:</strong>
+            ¿Existe vida fuera de la Tierra? Todavía no tenemos una respuesta confirmada.
+            Los científicos estudian Marte, algunas lunas heladas y exoplanetas que
+            podrían reunir condiciones adecuadas para la vida.
+            <a href="https://science.nasa.gov/exoplanets/" target="_blank" rel="noopener noreferrer">Descubre cómo se buscan otros mundos ↗</a>
+        </div>
+    </section>
+
+    <!-- EXOPLANETAS -->
+
+    <section id="exoplanetas">
+        <h2 class="titulo-seccion">05 · MUNDOS MÁS ALLÁ DEL SOL</h2>
+
+        <div class="panel">
+            <p>
+                Un <strong>exoplaneta</strong> es un planeta que orbita una estrella
+                distinta del Sol. Se han descubierto miles y los científicos esperan
+                encontrar muchos más.
+            </p>
+
+            <p>
+                Algunos son gigantes gaseosos; otros, mundos rocosos o planetas con
+                características que no existen en nuestro sistema solar. Encontrar un
+                planeta en la llamada zona habitable no significa que tenga vida:
+                solo indica que, bajo ciertas condiciones, podría existir agua líquida
+                en su superficie.
+            </p>
+
+            <a class="boton" href="https://science.nasa.gov/exoplanets/" target="_blank" rel="noopener noreferrer">
+                Catálogo de exoplanetas
+            </a>
+
+            <a class="boton" href="https://science.nasa.gov/eyes/" target="_blank" rel="noopener noreferrer">
+                Explorar mundos en 3D
+            </a>
+
+            <a class="boton" href="https://science.nasa.gov/tutorials/eyes-on-exoplanets-tutorial/" target="_blank" rel="noopener noreferrer">
+                Tutorial de exploración
+            </a>
+        </div>
+    </section>
+
+    <!-- MISIONES -->
+
+    <section id="misiones">
+        <h2 class="titulo-seccion">06 · LA HUMANIDAD EN EL ESPACIO</h2>
+
+        <p class="introduccion">
+            Desde los primeros satélites hasta los telescopios modernos,
+            las misiones espaciales han cambiado nuestra forma de comprender el cosmos.
+        </p>
+
+        <div class="rejilla">
+            <article class="tarjeta">
+                <span class="icono">🚀</span>
+                <h3>Programa Apolo</h3>
+                <p>El programa Apolo llevó astronautas a la Luna. Apolo 11 logró el primer alunizaje tripulado en julio de 1969.</p>
+                <a href="https://www.nasa.gov/the-apollo-program/" target="_blank" rel="noopener noreferrer">Historia de Apolo ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🔭</span>
+                <h3>Telescopio Hubble</h3>
+                <p>Observa el universo desde el espacio y ha contribuido a estudiar galaxias, estrellas, nebulosas y la expansión cósmica.</p>
+                <a href="https://science.nasa.gov/mission/hubble/" target="_blank" rel="noopener noreferrer">Conocer Hubble ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🌠</span>
+                <h3>Telescopio James Webb</h3>
+                <p>Observa principalmente en el infrarrojo y permite estudiar galaxias lejanas, atmósferas de exoplanetas y la formación de estrellas.</p>
+                <a href="https://science.nasa.gov/mission/webb/" target="_blank" rel="noopener noreferrer">Conocer Webb ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🤖</span>
+                <h3>Rover Perseverance</h3>
+                <p>Explora Marte, estudia su geología y recoge muestras que podrían ayudar a comprender si existieron condiciones favorables para la vida.</p>
+                <a href="https://science.nasa.gov/mission/mars-2020-perseverance/" target="_blank" rel="noopener noreferrer">Seguir Perseverance ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🛰️</span>
+                <h3>Voyager</h3>
+                <p>Las sondas Voyager han investigado los planetas gigantes y continúan enviando información desde regiones muy lejanas del sistema solar.</p>
+                <a href="https://science.nasa.gov/mission/voyager/" target="_blank" rel="noopener noreferrer">Descubrir Voyager ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🌕</span>
+                <h3>Programa Artemis</h3>
+                <p>Es el programa de la NASA destinado a preparar nuevas misiones tripuladas a la Luna y desarrollar capacidades para futuras exploraciones.</p>
+                <a href="https://www.nasa.gov/humans-in-space/artemis/" target="_blank" rel="noopener noreferrer">Conocer Artemis ↗</a>
+            </article>
+        </div>
+
+        <div class="franja">
+            <strong>¿Quieres seguir las misiones reales?</strong>
+            Visita la página oficial de
+            <a href="https://www.nasa.gov/missions/" target="_blank" rel="noopener noreferrer">misiones de la NASA</a>
+            para descubrir sondas, telescopios, robots y proyectos de exploración.
+        </div>
+    </section>
+
+    <!-- VIAJE VIRTUAL -->
+
+    <section id="viaje">
+        <h2 class="titulo-seccion">07 · VIAJA POR EL ESPACIO DESDE TU ORDENADOR</h2>
+
+        <p class="introduccion">
+            No necesitas una nave espacial para empezar a explorar.
+            Estas páginas permiten recorrer planetas, observar imágenes astronómicas
+            y descubrir objetos reales del universo.
+        </p>
+
+        <div class="rejilla">
+            <article class="tarjeta">
+                <span class="icono">🪐</span>
+                <h3>NASA Eyes: sistema solar</h3>
+                <p>Viaja virtualmente por el sistema solar y observa planetas, lunas, asteroides y naves espaciales en una simulación 3D.</p>
+                <a class="boton" href="https://eyes.nasa.gov/apps/solar-system/" target="_blank" rel="noopener noreferrer">¡Despegar! ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🌍</span>
+                <h3>NASA Eyes: exoplanetas</h3>
+                <p>Explora mundos que orbitan otras estrellas y compara sus características en una visualización interactiva.</p>
+                <a class="boton" href="https://eyes.nasa.gov/apps/exo/" target="_blank" rel="noopener noreferrer">Viajar a otros mundos ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">☄️</span>
+                <h3>NASA Eyes: asteroides</h3>
+                <p>Investiga asteroides cercanos a la Tierra y conoce mejor estos cuerpos rocosos.</p>
+                <a class="boton" href="https://eyes.nasa.gov/apps/asteroids/" target="_blank" rel="noopener noreferrer">Explorar asteroides ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🔭</span>
+                <h3>Stellarium Web</h3>
+                <p>Un planetario en línea para identificar estrellas, constelaciones y planetas en el cielo.</p>
+                <a class="boton" href="https://stellarium-web.org/" target="_blank" rel="noopener noreferrer">Mirar el cielo ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🌌</span>
+                <h3>NASA ViewSpace</h3>
+                <p>Aprende con vídeos y actividades interactivas sobre el universo, las estrellas y los planetas.</p>
+                <a class="boton" href="https://www.nasa.gov/stem-content/viewspace/" target="_blank" rel="noopener noreferrer">Comenzar la visita ↗</a>
+            </article>
+
+            <article class="tarjeta">
+                <span class="icono">🛰️</span>
+                <h3>Solar System Treks</h3>
+                <p>Explora superficies de mundos del sistema solar mediante visualizaciones basadas en datos de misiones espaciales.</p>
+                <a class="boton" href="https://trek.nasa.gov/" target="_blank" rel="noopener noreferrer">Recorrer otros mundos ↗</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+
+    <section id="galeria">
+        <h2 class="titulo-seccion">08 · VENTANAS AL COSMOS</h2>
+
+        <p class="introduccion">
+            El espacio está lleno de estructuras y paisajes extraordinarios.
+            Aquí tienes una pequeña galería visual para inspirarte a seguir investigando.
+        </p>
+
+        <div class="galeria">
+            <article class="tarjeta">
+                <img class="imagen-galeria"
+                     src="https://images-assets.nasa.gov/image/PIA12348/PIA12348~orig.jpg"
+                     alt="Imagen astronómica del espacio"
+                     loading="lazy">
+                <h3>El universo profundo</h3>
+                <p>Las observaciones astronómicas nos permiten estudiar objetos muy lejanos.</p>
+            </article>
+
+            <article class="tarjeta">
+                <img class="imagen-galeria"
+                     src="https://images-assets.nasa.gov/image/PIA00452/PIA00452~orig.jpg"
+                     alt="Vista de un planeta del sistema solar"
+                     loading="lazy">
+                <h3>Otros mundos</h3>
+                <p>Las sondas espaciales nos acercan a planetas que antes solo eran puntos de luz.</p>
+            </article>
+
+            <article class="tarjeta">
+                <img class="imagen-galeria"
+                     src="https://images-assets.nasa.gov/image/PIA03149/PIA03149~orig.jpg"
+                     alt="Paisaje de exploración planetaria"
+                     loading="lazy">
+                <h3>Exploración planetaria</h3>
+                <p>Robots y naves estudian entornos que todavía conocemos muy poco.</p>
+            </article>
+        </div>
+
+        <p class="nota">
+            Si alguna imagen no carga, puedes ver fotografías y vídeos directamente en
+            <a href="https://images.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Image and Video Library</a>.
+            La disponibilidad de imágenes externas puede cambiar.
+        </p>
+
+        <a class="boton" href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener noreferrer">
+            Imagen astronómica del día
+        </a>
+    </section>
+
+    <!-- RECURSOS -->
+
+    <section id="recursos">
+        <h2 class="titulo-seccion">09 · PORTAL DE RECURSOS ESPACIALES</h2>
+
+        <p class="introduccion">
+            Más webs para aprender, consultar datos científicos y descubrir nuevas imágenes.
+        </p>
+
+        <div class="panel">
+            <a class="recurso" href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">
+                <strong>🚀 NASA</strong><br>
+                Noticias, ciencia, astronautas, misiones y recursos educativos.
+            </a>
+
+            <a class="recurso" href="https://science.nasa.gov/solar-system/" target="_blank" rel="noopener noreferrer">
+                <strong>🪐 NASA — Sistema Solar</strong><br>
+                Información sobre planetas, lunas, cometas y otros cuerpos celestes.
+            </a>
+
+            <a class="recurso" href="https://science.nasa.gov/exoplanets/" target="_blank" rel="noopener noreferrer">
+                <strong>🌍 NASA — Exoplanetas</strong><br>
+                Catálogo y explicaciones sobre planetas que orbitan otras estrellas.
+            </a>
+
+            <a class="recurso" href="https://www.esa.int/" target="_blank" rel="noopener noreferrer">
+                <strong>🇪🇺 Agencia Espacial Europea (ESA)</strong><br>
+                Misiones europeas, observación de la Tierra y exploración del universo.
+            </a>
+
+            <a class="recurso" href="https://www.eso.org/public/" target="_blank" rel="noopener noreferrer">
+                <strong>🔭 Observatorio Europeo Austral (ESO)</strong><br>
+                Descubrimientos astronómicos, telescopios e imágenes del cosmos.
+            </a>
+
+            <a class="recurso" href="https://www.planetary.org/" target="_blank" rel="noopener noreferrer">
+                <strong>🌌 The Planetary Society</strong><br>
+                Divulgación y proyectos relacionados con la exploración planetaria.
+            </a>
+
+            <a class="recurso" href="https://www.jpl.nasa.gov/apps/" target="_blank" rel="noopener noreferrer">
+                <strong>🛰️ Aplicaciones del JPL</strong><br>
+                Herramientas interactivas para explorar el sistema solar y las misiones.
+            </a>
+
+            <a class="recurso" href="https://science.nasa.gov/planetary-science/resources/" target="_blank" rel="noopener noreferrer">
+                <strong>📚 Recursos de ciencia planetaria</strong><br>
+                Materiales para aprender sobre los planetas y la exploración espacial.
+            </a>
+        </div>
+    </section>
+
+    <!-- TEST -->
+
+    <section id="test">
+        <h2 class="titulo-seccion">10 · PON A PRUEBA TUS CONOCIMIENTOS</h2>
+
+        <p class="introduccion">
+            ¿Cuánto has aprendido? Abre cada pregunta para comprobar la respuesta.
+        </p>
+
+        <details>
+            <summary>1. ¿Cómo se llama nuestra galaxia?</summary>
+            <p>La Vía Láctea.</p>
+        </details>
+
+        <details>
+            <summary>2. ¿Cuál es la estrella del sistema solar?</summary>
+            <p>El Sol.</p>
+        </details>
+
+        <details>
+            <summary>3. ¿Cuántos planetas hay en el sistema solar?</summary>
+            <p>Ocho: Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano y Neptuno.</p>
+        </details>
+
+        <details>
+            <summary>4. ¿Qué es un exoplaneta?</summary>
+            <p>Un planeta que orbita una estrella distinta del Sol.</p>
+        </details>
+
+        <details>
+            <summary>5. ¿Qué telescopio espacial observa principalmente en infrarrojo?</summary>
+            <p>El telescopio espacial James Webb.</p>
+        </details>
+
+        <details>
+            <summary>6. ¿Qué es un agujero negro?</summary>
+            <p>Una región del espacio con una gravedad tan intensa que, dentro del horizonte de sucesos, la luz no puede escapar.</p>
+        </details>
+
+        <details>
+            <summary>7. ¿Se ha confirmado vida fuera de la Tierra?</summary>
+            <p>No. Por ahora no existe una detección confirmada de vida extraterrestre.</p>
+        </details>
+
+        <details>
+            <summary>8. ¿Qué página permite explorar el sistema solar en 3D?</summary>
+            <p>NASA Eyes on the Solar System: <a href="https://eyes.nasa.gov/apps/solar-system/" target="_blank" rel="noopener noreferrer">abrir explorador</a>.</p>
+        </details>
+    </section>
+
+    <!-- AUTOR -->
+
+    <section id="sobre-mi">
+        <h2 class="titulo-seccion">11 · SOBRE ESTE PROYECTO</h2>
+
+        <div class="panel">
+            <p>
+                Esta página web ha sido creada por <strong>Nicolás Castillo</strong>
+                como proyecto de exploración y divulgación sobre el espacio exterior.
+            </p>
+
+            <p>
+                Su objetivo es reunir información básica sobre el universo y facilitar
+                el acceso a recursos educativos, fotografías, simulaciones y páginas
+                de organismos dedicados a la investigación espacial.
+            </p>
+
+            <p>
+                El diseño utiliza HTML y CSS para crear una experiencia visual inspirada
+                en el espacio: fondos oscuros, detalles luminosos, tarjetas animadas
+                y navegación por secciones.
+            </p>
+
+            <p class="nota">
+                Las explicaciones son introductorias. Para trabajos académicos o
+                información científica más detallada, consulta las fuentes enlazadas.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section id="contacto">
+        <h2 class="titulo-seccion">12 · FIN DE LA TRANSMISIÓN</h2>
+
+        <p class="cita">
+            «El universo no deja de sorprendernos. Cada respuesta abre la puerta a nuevas preguntas».
+        </p>
+
+        <div class="panel" style="text-align:center">
+            <h3>Tu próxima misión comienza aquí</h3>
+            <p>Elige un destino, explora una galaxia y continúa aprendiendo.</p>
+
+            <a class="boton" href="https://eyes.nasa.gov/apps/solar-system/" target="_blank" rel="noopener noreferrer">
+                Viajar por el sistema solar
+            </a>
+
+            <a class="boton" href="https://science.nasa.gov/exoplanets/" target="_blank" rel="noopener noreferrer">
+                Buscar otros mundos
+            </a>
+
+            <a class="boton" href="#inicio">Volver al inicio ↑</a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p class="etiqueta">UNIVERSO INFINITO</p>
+    <p>Explorando el espacio exterior · Proyecto de Nicolás Castillo</p>
+    <p class="nota">Información y recursos externos enlazados para fines educativos.</p>
+    <p>✦ Hecho con curiosidad, ciencia y pasión por el cosmos ✦</p>
+</footer>
+
+<a class="volver" href="#inicio" aria-label="Volver al principio" title="Volver al principio">↑</a>
+
+</body>
+</html>
+```

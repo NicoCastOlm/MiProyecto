@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <meta charset="UTF-8">
+<html>
+    <head></head>
+    <body>
+        <header>
+            Titulo
+        </header>
+        <form action="Respuesta.html">
+            <fieloset>
+                        <br><label for="Nombre"> Nombre </label >
+                        <br><input type="text" id="Nombre" placeholder="Tu Nombre" name="Nombre" required minlength="2" maxlength="50">
+                        <br><label for="Apellido"> Apellido </label ></br>
+                        <br><input type="text" id="Apellido" placeholder="tu Apellido" name="Apellido" minlength="2" maxlength="50">
+                        <br><label for="email"> Correo Electronico </label >
+                        <br><input type="email" id="Correo-electronico" placeholder="Mi.Correo@electronico.com" name="Correo" required minlength="2" maxlength="50">
+                        <br><label for="Contraseña">Contraseña</label>
+                        <br><input type="password" id="Contraseña" name="Contraseña" required minlength="2" maxlength="50">
+                        <br><label for="Telefono">telefona</label>
+                        <br><input type="tel" id="telefono" name="telefono" pattern="[0-9+ ] ¨{9,15}" >
+                        <br><label for="URL">url</label>
+                        <br><input type="url" id="url" name="url" placeholder="www.direcion.com" >
+                        <br><label for="Edad">Tu edad</label>
+                        <br><input type="number" id="edad" name="edad" min="18" max="99" >
+                        <br><label for="fecha">fecha</label>
+                        <br><input type="date" id="fecha" name="fecha"  >
+                        <br><label for="fecha">hora</label>
+                        <br><input type="time" id="hora" name="hora" min="01:00" max="23:59">    
+
+            </fieldset>
+            <fieldset>
+                <legend>
+                Elige el metodo de contacto
+                <input type="radio" id="contacto-email" name="metodo-contacto" value="email">
+                <label for="contacto-email">Email</label> 
+                <input type="radio" id="contacto-telefono" name="metodo-contacto" value="telefono">
+                <label for="contacto-telefono">Telefono</label>
+                </legend>
+            </fieldset>
+        </form>
+    </body>
+</html>

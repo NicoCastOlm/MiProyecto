@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla de ejercicio: Rellena los huecos</title>
+
+    <!--
+    ==========================================
+    EJERCICIO: ESTRUCTURA BÁSICA DE HTML
+    Instrucciones:
+    1. Escribe tu nombre y el título de tu sitio.
+    2. Rellena cada etiqueta vacía según indica el comentario.
+    3. No borres la estructura: solo añade contenido.
+    ==========================================
+    -->
+<base>
+</head>
+<body>
+
+    <!-- ================= CABECERA ================= -->
+    <!-- TODO: Añade aquí el logo/nombre del sitio y un título principal -->
+    <header>
+        <img src="https://www.universostartrek.com/La-Via-Lactea.jpg" alt="Foto del espacio desde la tierra"><!-- PON AQUÍ LA IMAGEN DEL LOGO -->
+        <h1>EL ESPACIO EXTERIOR</h1>          <!-- PON AQUÍ EL TÍTULO PRINCIPAL -->
+        <p>Por Nicolás Castillo</p>            <!-- PON AQUÍ UNA FRASE O ESLOGAN -->
+    </header>
+
+    <!-- ================= MENÚ ================= -->
+    <!-- TODO: Crea el menú de navegación con 4 enlaces: Inicio, Servicios, Sobre mí, Contacto -->
+    <nav>
+        <ul>
+            <li><a href="#Inicio">Inicio</a></li>
+            <li><a href="#Servicios">Servicios</a></li>
+            <li><a href="#Sobre mi">Sobre mi</a></li>
+            <li><a href="#Contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= PESTAÑAS ================= -->
+    <!-- TODO: Crea un grupo de pestañas. En cada pestaña:
+           1. Escribe el título de la pestaña
+           2. Rellena el contenido de su panel -->
+    <main>
+
+        <!-- PESTAÑA 1 -->
+        <div class="pestana">
+            <input type="radio" name="pestana" id="p1" checked>
+            <label for="p1">Sistemas planetarios próximos a nosotros</label>   <!-- TÍTULO DE LA PESTAÑA 1 -->
+
+            <div class="contenido">
+                <h2></h2>              <!-- TÍTULO DEL CONTENIDO -->
+                <li>1. Próxima centauri</li>
+                <li>2. Epsilon Eridani</li>
+                <li>3. Epsilon Indi</li>
+                <li>4. Tau Ceti</li>
+                <li>5. Gliese 674</li>
+                <!-- TEXTO DE LA PESTAÑA 1 -->
+            </div>
+        </div>
+
+        <!-- PESTAÑA 2 -->
+        <div class="pestana">
+            <input type="radio" name="pestana" id="p2">
+            <label for="p2">Cuerpos del universo curiosos</label>   <!-- TÍTULO DE LA PESTAÑA 2 -->
+
+            <div class="contenido">
+                <h2></h2>
+                <li>Pulsar</li>   
+                <li>Agujero negro</li>
+                <li>Estrella de neutrones</li>          
+                  <!-- TEXTO DE LA PESTAÑA 2 -->
+            </div>
+        </div>
+
+        <!-- PESTAÑA 3 -->
+        <div class="pestana">
+            <input type="radio" name="pestana" id="p3">
+            <label for="p3">Superplanetas (y distancia a la que están)</label>   <!-- TÍTULO DE LA PESTAÑA 3 -->
+
+            <div class="contenido">
+                <h2></h2>
+                <ul>
+                    <li>TRAPPIST-1 (40 años luz)</li>         <!-- ELEMENTO 1 -->
+                    <li>LHS 1140 b (49 años luz)</li>         <!-- ELEMENTO 2 -->
+                    <li>Kepler-186f (149 años luz)</li>         <!-- ELEMENTO 3 -->
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ================= PIE DE PÁGINA ================= -->
+    <!-- TODO: Añade el pie de página con tu nombre y el año -->
+    <footer>
+        <p>Nicolás Castllo - 2026</p>
+    </footer>
+
+</body>
+</html>
